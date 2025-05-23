@@ -1,0 +1,42 @@
+body {
+    background-color: #1c90fb;
+    font-family: "Poppins", sans-serif;
+}
+
+form {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    justify-content: center;
+}
+
+input {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#toggle-password {
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.alert {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
