@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: equipment-tracker-test
+    env: php
+    plan: free
+    buildCommand: |
+      composer install
+      php artisan config:clear
+      php artisan route:clear
+    startCommand: |
+      touch /tmp/database.sqlite
+      php artisan migrate --force
+      php -S 0.0.0.0:10000 -t public
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        value: base64:u+zFY7eu51Qx/AquPaAJLU+i4XsexzVv3PaEWXd7pDo=
+      - key: APP_URL
+        value: https://equipment-tracker-test.onrender.com
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /tmp/database.sqlite
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: votingsystem05@gmail.com
+      - key: MAIL_PASSWORD
+        value: yeeg pwjt ledz jile
+      - key: MAIL_ENCRYPTION
+        value: tls
+      - key: MAIL_FROM_ADDRESS
+        value: votingsystem05@gmail.com
+      - key: MAIL_FROM_NAME
+        value: Equipment Tracker Test
